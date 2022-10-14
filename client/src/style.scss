@@ -40,7 +40,17 @@ $lightGreen: #b9e7e7;
                     background-color: teal;
                     color: white;
                     cursor: pointer;
+                }
 
+                p {
+                    font-size: 12px;
+                    color: red;
+                    text-align: center;
+                }
+
+                span {
+                    font-size: 12px;
+                    text-align: center;
                 }
             }
         }
