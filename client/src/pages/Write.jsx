@@ -6,8 +6,6 @@ const Write = () => {
 
     const [value, setValue] = useState('');
 
-    console.log(value)
-
     return (
         <div className="add">
             <div className="content">
@@ -17,7 +15,17 @@ const Write = () => {
                 </div>
             </div>
             <div className="menu">
-                <div className="item">i1</div>
+                <div className="item">
+                    <h1>Publish</h1>
+                    <span>
+                        <b>Status:</b> Draft
+                    </span>
+                    <span>
+                        <b>Visbility:</b> Public
+                    </span>
+                    <input style={{ display: "none" }} type="file" id="file" name="" />
+                    <label htmlFor="file">Upload Image</label>
+                </div>
                 <div className="item">i2</div>
             </div>
         </div>
