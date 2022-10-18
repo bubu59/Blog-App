@@ -4,8 +4,8 @@ import { addPost, deletePost, getPost, getPosts, updatePost } from "../controlle
 
 const router = express.Router()
 
-router.get("/", getPost)
-router.get("/:id", getPosts)
+router.get("/", getPosts)
+router.get("/:id", getPost)
 router.post("/", addPost)
 router.delete("/:id", deletePost)
 router.put("/:id", updatePost)
