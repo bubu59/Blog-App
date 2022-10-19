@@ -10,13 +10,13 @@ const Home = () => {
 
     const cat = useLocation().search
 
-    console.log(cat)
+    // console.log(cat)
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const res = await axios.get(`/posts${cat}`)
-                console.log(res)
+                // console.log(res)
                 setPosts(res.data)
             } catch (err) {
                 console.log(err)
@@ -25,7 +25,7 @@ const Home = () => {
         fetchData()
     }, [cat])
 
-    console.log(posts)
+    // console.log(posts)
 
     // const posts = [
     //     // {
