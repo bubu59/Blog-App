@@ -1,7 +1,7 @@
 import React from 'react'
 import Edit from "../img/edit.PNG"
 import Delete from "../img/delete.PNG"
-import { Link, Navigate, useLocation, useNavigate } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import Menu from '../components/Menu'
 import { useEffect } from 'react';
 import { useState } from 'react';
@@ -41,7 +41,7 @@ const Single = () => {
 
     const handleDelete = async () => {
         try {
-            const res = await axios.delete(`/posts/${postId}`)
+            await axios.delete(`/posts/${postId}`)
             navigate("/")
         } catch (err) {
             console.log(err)
@@ -71,7 +71,7 @@ const Single = () => {
                 <h1>{post.title}</h1>
                 {post.desc}
             </div>
-            <Menu />
+            <Menu cat={post.cat} />
         </div>
     )
 }
