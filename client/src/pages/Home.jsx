@@ -1,25 +1,31 @@
-import React from 'react'
+import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Link } from "react-router-dom";
-import axios from "axios"
+import { Link, useLocation } from "react-router-dom";
+import axios from "axios";
 
 const Home = () => {
 
     const [posts, setPosts] = useState([])
 
+    const cat = useLocation().search
+
+    console.log(cat)
+
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get("/posts")
-                console.log(res.data)
+                const res = await axios.get(`/posts${cat}`)
+                console.log(res)
                 setPosts(res.data)
             } catch (err) {
                 console.log(err)
             }
         }
         fetchData()
-    }, [])
+    }, [cat])
+
+    console.log(posts)
 
     // const posts = [
     //     // {
